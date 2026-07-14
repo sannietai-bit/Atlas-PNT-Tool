@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATLAS PNT 製作工具</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel topInfo">
+      <div class="topInfoHeader">
+        <div>
+          <h1 id="appTitle">ATLAS PNT 製作工具</h1>
+          <p id="appIntro" class="hint">將圖片在本機瀏覽器轉成 ATLAS 可用的 PNT/PNG，不會上傳，支援船帆、畫作、旗幟、人物紋身與多幅畫作拼圖牆；完成後放入 <code>Steam\steamapps\common\ATLAS\ShooterGame\Saved\MyPaintings</code>。</p>
+        </div>
+        <label class="languageField">
+          <span id="languageLabel">語言</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-TW">繁體中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="th">ไทย</option>
+            <option value="ru">Русский</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel controls leftPanel">
+
+      <label class="field">
+        <span id="modeLabel">類型</span>
+        <select id="modeSelect">
+          <optgroup label="船隻帆面類" data-i18n-group="group.sails">
+            <option value="singleSail">單桅小船帆（木筏 / 斯路普帆）</option>
+            <option value="double">雙桅中船帆（雙桅船帆）</option>
+            <option value="triple">三桅大船帆（雙桅 / 帆船大帆）</option>
+          </optgroup>
+          <optgroup label="領地與主權旗幟類" data-i18n-group="group.flags">
+            <option value="claimFlag">島嶼領地旗（核心主權旗）</option>
+            <option value="singleFlag">單面獨立落地旗幟</option>
+            <option value="flag">多面大型裝飾旗幟</option>
+          </optgroup>
+          <optgroup label="建築與基地畫布類" data-i18n-group="group.structures">
+            <option value="painting" selected>單幅畫布牆（Wall Canvas）</option>
+            <option value="signboard">小型木製告示牌（Signboard）</option>
+            <option value="hangingSign">木製懸掛招牌（Hanging Sign）</option>
+            <option value="billboard">大型木製看板（Billboard）</option>
+          </optgroup>
+          <optgroup label="其他工具" data-i18n-group="group.tools">
+            <option value="largePainting">大型畫作 512x512</option>
+            <option value="wall">多幅畫作（拼圖牆）</option>
+            <option value="tattoo">人物紋身 Tattoo</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <div id="modeCard" class="modeCard" aria-live="polite">
+        <div id="modeIcon" class="modeIcon"></div>
+        <div>
+          <strong id="modeCardTitle">單幅畫布牆（Wall Canvas）</strong>
+          <code id="modeCardSuffix">_Sign_PaintingCanvas_C</code>
+        </div>
+      </div>
+
+      <div id="uploads" class="uploads"></div>
+
+      <section id="wallSettings" class="wallSettings">
+        <div class="grid3">
+          <label class="field">
+            <span id="wallColsLabel">橫向數量</span>
+            <input id="wallCols" type="number" min="1" max="9" value="3">
+          </label>
+          <label class="field">
+            <span id="wallRowsLabel">直向數量</span>
+            <input id="wallRows" type="number" min="1" max="9" value="2">
+          </label>
+          <label class="field">
+            <span id="wallPrefixLabel">前綴</span>
+            <input id="wallPrefix" type="text" value="K">
+          </label>
+        </div>
+        <p id="wallHint" class="hint">檔名格式：Kxy_Sign_PaintingCanvas_C，x 是橫軸，y 是直軸。</p>
+      </section>
+    </section>
+
+    <section class="panel previewPanel">
+      <div class="previewHeader">
+        <div>
+          <h2 id="previewTitle">製作預覽</h2>
+          <p id="fileNameHint" class="srOnly"></p>
+        </div>
+        <div class="previewTools">
+          <label class="zoomField">
+            <span id="previewZoomLabel">檢視</span>
+            <select id="previewZoom">
+              <option value="100">100%</option>
+              <option value="90">90%</option>
+              <option value="80">80%</option>
+              <option value="70">70%</option>
+              <option value="60">60%</option>
+              <option value="50">50%</option>
+              <option value="40">40%</option>
+              <option value="30">30%</option>
+              <option value="20">20%</option>
+              <option value="10">10%</option>
+            </select>
+          </label>
+          <div id="dyeCount" class="badge">0 色</div>
+        </div>
+      </div>
+      <div id="canvasWrap" class="canvasWrap">
+        <canvas id="previewCanvas" width="256" height="256"></canvas>
+      </div>
+    </section>
+
+    <section class="panel controls rightPanel">
+      <div class="grid2">
+        <label class="field">
+          <span id="fitModeLabel">放置方式</span>
+          <select id="fitMode">
+            <option value="contain">完整放入</option>
+            <option value="cover">填滿裁切</option>
+          </select>
+        </label>
+        <label class="field">
+          <span id="paletteLimitLabel">染料</span>
+          <select id="paletteLimit">
+            <option value="all">全部</option>
+            <option value="5">最多 5 色</option>
+            <option value="10">最多 10 色</option>
+            <option value="20">最多 20 色</option>
+            <option value="30">最多 30 色</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span id="qualityModeLabel">畫質模式</span>
+        <select id="qualityMode">
+          <option value="dither">照片優化（抖色）</option>
+          <option value="softDither">照片柔和</option>
+          <option value="sharpDither">照片銳利</option>
+          <option value="smooth">平滑色塊</option>
+          <option value="pixel">像素風</option>
+          <option value="lineart">線稿 / Logo</option>
+          <option value="bw">黑白兩色</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span id="ditherAmountLabel">畫質強度</span>
+        <input id="ditherAmount" type="range" min="0" max="100" value="70">
+      </label>
+
+      <label class="field">
+        <span id="removeModeLabel">去背</span>
+        <select id="removeMode">
+          <option value="none">不去背</option>
+          <option value="dark">黑底/深色去背</option>
+          <option value="edgeDark">只去外圍黑底</option>
+          <option value="checker">白灰格去背</option>
+          <option value="white">白底去背</option>
+          <option value="pick">點選顏色去背</option>
+        </select>
+      </label>
+
+      <div class="grid2">
+        <label class="field">
+          <span id="thresholdLabel">去背強度</span>
+          <input id="threshold" type="range" min="10" max="120" value="45">
+        </label>
+        <label class="field">
+          <span id="fillColorLabel">背景填色</span>
+          <input id="fillColor" type="color" value="#000000">
+        </label>
+      </div>
+
+      <label class="check">
+        <input id="transparentBg" type="checkbox" checked>
+        <span id="transparentBgLabel">去背後保持透明</span>
+      </label>
+
+      <label class="check">
+        <input id="showFrames" type="checkbox" checked>
+        <span id="showFramesLabel">顯示框線</span>
+      </label>
+
+      <label class="field">
+        <span id="outputNameLabel">輸出檔名</span>
+        <div class="fileNameRow">
+          <input id="outputName" type="text" value="Custom">
+          <span id="fixedSuffix" class="fixedSuffix">_SailDouble_C</span>
+        </div>
+      </label>
+
+      <div class="actions">
+        <button id="downloadPngBtn" type="button">下載 PNG</button>
+        <button id="downloadPntBtn" type="button">下載 PNT</button>
+      </div>
+
+      <section class="help">
+        <strong id="helpTitle">小提醒</strong>
+        <p id="helpText">白框是官方框，紅框是安全範圍。色盤使用 ATLAS Wiki 的 52 色染料；人物紋身建議先在遊戲內存一個空白 Tattoo PNT，再用同名檔覆蓋測試。</p>
+      </section>
+
+      <h2 id="dyeListTitle" class="sectionTitle">染料清單</h2>
+      <div id="dyeList" class="dyeList"></div>
+    </section>
+  </main>
+
+  <script src="palette.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
