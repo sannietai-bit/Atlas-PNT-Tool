@@ -1355,9 +1355,12 @@ function render() {
 function updatePreviewZoom() {
   const zoom = Number(els.previewZoom.value || 100);
   const wrapRect = els.canvasWrap.getBoundingClientRect();
+  const isMobile = window.matchMedia("(max-width: 820px)").matches;
   const safeWidth = Math.max(80, wrapRect.width - 28);
-  const safeHeight = Math.max(80, wrapRect.height - 32);
-  const baseSize = Math.min(safeWidth, safeHeight, 760);
+  const visibleHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const safeHeight = Math.max(80, (isMobile ? Math.min(wrapRect.height || visibleHeight * 0.68, visibleHeight * 0.68) : wrapRect.height) - 32);
+  const maxPreview = isMobile ? 640 : 760;
+  const baseSize = Math.min(safeWidth, safeHeight, maxPreview);
   els.canvas.style.setProperty("--preview-size", `${Math.max(32, baseSize * zoom / 100)}px`);
 }
 
