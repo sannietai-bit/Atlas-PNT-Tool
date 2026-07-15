@@ -48,8 +48,37 @@ body {
 
 .leftPanel,
 .rightPanel {
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
   height: 100%;
+}
+
+.leftPanel::-webkit-scrollbar,
+.rightPanel::-webkit-scrollbar,
+.canvasWrap::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.leftPanel::-webkit-scrollbar-track,
+.rightPanel::-webkit-scrollbar-track,
+.canvasWrap::-webkit-scrollbar-track {
+  background: #101418;
+  border-radius: 999px;
+}
+
+.leftPanel::-webkit-scrollbar-thumb,
+.rightPanel::-webkit-scrollbar-thumb,
+.canvasWrap::-webkit-scrollbar-thumb {
+  background: #4a5864;
+  border-radius: 999px;
+  border: 2px solid #101418;
+}
+
+.leftPanel::-webkit-scrollbar-thumb:hover,
+.rightPanel::-webkit-scrollbar-thumb:hover,
+.canvasWrap::-webkit-scrollbar-thumb:hover {
+  background: #60717f;
 }
 
 .topInfo {
@@ -498,6 +527,7 @@ canvas {
   .leftPanel,
   .rightPanel {
     overflow: visible;
+    scrollbar-gutter: auto;
     height: auto;
   }
 
