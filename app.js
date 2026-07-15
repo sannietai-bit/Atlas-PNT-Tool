@@ -1054,10 +1054,10 @@ Object.assign(LANGUAGE_ALIASES.vi, {
 });
 
 const MODE_ICON_SVG = {
-  sail: `<svg viewBox="0 0 64 64" role="img"><path fill="#ffd166" d="M30 8v38h-3L30 8Z"/><path fill="#48c4d8" d="M32 10c11 9 15 20 15 34H32V10Z"/><path fill="#f08a4b" d="M28 18c-7 8-10 16-10 26h10V18Z"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M12 50h40M30 8v42"/></svg>`,
-  flag: `<svg viewBox="0 0 64 64" role="img"><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M18 10v44"/><path fill="#ff5c5c" d="M20 12h30l-6 10 6 10H20V12Z"/><path fill="#ffd166" d="M24 17h16v5H24z"/></svg>`,
-  canvas: `<svg viewBox="0 0 64 64" role="img"><rect x="12" y="14" width="40" height="34" rx="3" fill="#e8eef2"/><path fill="#48c4d8" d="M16 42l12-14 8 9 5-6 8 11H16Z"/><circle cx="42" cy="24" r="5" fill="#ffd166"/><path fill="none" stroke="currentColor" stroke-width="4" d="M12 14h40v34H12z"/></svg>`,
-  tattoo: `<svg viewBox="0 0 64 64" role="img"><circle cx="32" cy="12" r="6" fill="#e8eef2"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M32 20v18M18 28h28M24 54l8-16 8 16"/><path fill="#48c4d8" d="M24 27h16v12H24z"/></svg>`,
+  sail: `<svg viewBox="0 0 64 64" role="img"><path fill="#d8b36a" d="M30 8v38h-3L30 8Z"/><path fill="#2f6f57" d="M32 10c11 9 15 20 15 34H32V10Z"/><path fill="#9b6230" d="M28 18c-7 8-10 16-10 26h10V18Z"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M12 50h40M30 8v42"/></svg>`,
+  flag: `<svg viewBox="0 0 64 64" role="img"><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M18 10v44"/><path fill="#9a3f2b" d="M20 12h30l-6 10 6 10H20V12Z"/><path fill="#d8b36a" d="M24 17h16v5H24z"/></svg>`,
+  canvas: `<svg viewBox="0 0 64 64" role="img"><rect x="12" y="14" width="40" height="34" rx="3" fill="#f3dfac"/><path fill="#2f6f57" d="M16 42l12-14 8 9 5-6 8 11H16Z"/><circle cx="42" cy="24" r="5" fill="#d8b36a"/><path fill="none" stroke="currentColor" stroke-width="4" d="M12 14h40v34H12z"/></svg>`,
+  tattoo: `<svg viewBox="0 0 64 64" role="img"><circle cx="32" cy="12" r="6" fill="#f3dfac"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M32 20v18M18 28h28M24 54l8-16 8 16"/><path fill="#2f6f57" d="M24 27h16v12H24z"/></svg>`,
 };
 
 const MODE_ICON_KIND = {
