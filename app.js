@@ -815,6 +815,7 @@ function ensureGameTabs() {
   tabs.innerHTML = `
     <button type="button" class="gameTab" data-game="ark"><span aria-hidden="true">▣</span><span>ARK</span></button>
     <button type="button" class="gameTab" data-game="atlas"><span aria-hidden="true">✦</span><span>Atlas</span></button>
+    <a class="gameTab gameTabLink" href="https://groups.google.com/g/pnt-tool/" target="_blank" rel="noopener"><span aria-hidden="true">☷</span><span>網站討論區</span></a>
   `;
   els.appTitle.insertAdjacentElement("afterend", tabs);
   tabs.addEventListener("click", (event) => {
