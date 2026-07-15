@@ -556,7 +556,6 @@ const LANGUAGE_ALIASES = {
 
 Object.assign(I18N["zh-TW"], {
   appTitle: "PNT Tool",
-  appIntro: "將圖片在本機瀏覽器轉成 ARK / ATLAS 可用的 PNT/PNG，不會上傳；完成後放入對應遊戲的 MyPaintings 資料夾。",
   "group.arkStructures": "ARK 建築與畫布類",
   "mode.arkPaintingCanvas": "畫布（Painting Canvas）",
   "mode.arkWarMap": "戰爭地圖（War Map）",
@@ -594,7 +593,6 @@ Object.assign(I18N["zh-TW"], {
 
 Object.assign(I18N.en, {
   appTitle: "PNT Tool",
-  appIntro: "Convert images locally in your browser into ARK / ATLAS-ready PNT/PNG files; nothing is uploaded. Place finished files in the matching game's MyPaintings folder.",
   "group.arkStructures": "ARK Structures and Canvases",
   "mode.arkPaintingCanvas": "Painting Canvas",
   "mode.arkWarMap": "War Map",
@@ -716,7 +714,6 @@ const MODE_ICON_KIND = {
 const els = {
   language: document.getElementById("languageSelect"),
   appTitle: document.getElementById("appTitle"),
-  appIntro: document.getElementById("appIntro"),
   languageLabel: document.getElementById("languageLabel"),
   modeLabel: document.getElementById("modeLabel"),
   mode: document.getElementById("modeSelect"),
@@ -865,7 +862,6 @@ function applyLanguage() {
   document.documentElement.lang = state.language === "zh-TW" ? "zh-Hant" : state.language;
   document.title = t("appTitle");
   setText(els.appTitle, "appTitle");
-  setHtml(els.appIntro, "appIntro");
   setText(els.languageLabel, "language");
   setText(els.modeLabel, "modeLabel");
   setText(els.wallColsLabel, "wallCols");
