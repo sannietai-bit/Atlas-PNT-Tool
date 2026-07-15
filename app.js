@@ -49,6 +49,12 @@ const MODE_CONFIG = {
     header: CANVAS_HEADER,
     layers: [{ key: "art", label: "ARK Metal Billboard", frame: [0, 0, 256, 256], safe: [10, 18, 236, 220] }],
   },
+  arkWarMap: {
+    name: "Custom_Sign_WarMap_C",
+    suffix: "_Sign_WarMap_C",
+    size: 512,
+    layers: [{ key: "art", label: "ARK War Map", frame: [0, 0, 512, 512], safe: [0, 0, 512, 512] }],
+  },
   arkSingleFlag: {
     name: "Custom_Flag_Single_Sign",
     suffix: "_Flag_Single_Sign",
@@ -60,6 +66,12 @@ const MODE_CONFIG = {
     suffix: "_PrimalItemStructure_Flag_Sign",
     header: CANVAS_HEADER,
     layers: [{ key: "art", label: "ARK Flag", frame: [0, 0, 256, 256], safe: [18, 18, 220, 220] }],
+  },
+  arkMultiPanelFlag: {
+    name: "Custom_Flag_Sign",
+    suffix: "_Flag_Sign",
+    header: CANVAS_HEADER,
+    layers: [{ key: "art", label: "ARK Multi Panel Flag", frame: [0, 0, 256, 256], safe: [18, 18, 220, 220] }],
   },
   arkBroodmotherFlag: {
     name: "Custom_Flag_BossSpider_Sign",
@@ -78,6 +90,18 @@ const MODE_CONFIG = {
     suffix: "_Flag_BossDragon_Sign",
     header: CANVAS_HEADER,
     layers: [{ key: "art", label: "ARK Dragon Flag", frame: [0, 0, 256, 256], safe: [18, 18, 220, 220] }],
+  },
+  arkShagRug: {
+    name: "Custom_Rug_Sign",
+    suffix: "_Rug_Sign",
+    header: CANVAS_HEADER,
+    layers: [{ key: "art", label: "ARK Shag Rug", frame: [0, 0, 256, 256], safe: [16, 16, 224, 224] }],
+  },
+  arkSpotlight: {
+    name: "Custom_Spotlight_Sign",
+    suffix: "_Spotlight_Sign",
+    header: CANVAS_HEADER,
+    layers: [{ key: "art", label: "ARK Spotlight", frame: [0, 0, 256, 256], safe: [16, 16, 224, 224] }],
   },
   singleSail: {
     name: "Custom_SailGeneric_C",
@@ -187,7 +211,7 @@ const GAME_MODE_GROUPS = {
   ark: [
     {
       key: "group.arkStructures",
-      modes: ["arkPaintingCanvas", "arkSmallWoodSign", "arkSmallMetalSign", "arkWallWoodSign", "arkWallMetalSign", "arkWoodBillboard", "arkMetalBillboard", "arkSingleFlag", "arkFlag", "arkBroodmotherFlag", "arkMegapithecusFlag", "arkDragonFlag"],
+      modes: ["arkPaintingCanvas", "arkWarMap", "arkSmallWoodSign", "arkSmallMetalSign", "arkWallWoodSign", "arkWallMetalSign", "arkWoodBillboard", "arkMetalBillboard", "arkSingleFlag", "arkFlag", "arkMultiPanelFlag", "arkBroodmotherFlag", "arkMegapithecusFlag", "arkDragonFlag", "arkShagRug", "arkSpotlight"],
     },
   ],
   atlas: [
@@ -535,6 +559,7 @@ Object.assign(I18N["zh-TW"], {
   appIntro: "將圖片在本機瀏覽器轉成 ARK / ATLAS 可用的 PNT/PNG，不會上傳；完成後放入對應遊戲的 MyPaintings 資料夾。",
   "group.arkStructures": "ARK 建築與畫布類",
   "mode.arkPaintingCanvas": "畫布（Painting Canvas）",
+  "mode.arkWarMap": "戰爭地圖（War Map）",
   "mode.arkSmallWoodSign": "小型木牌（Small Wood Sign）",
   "mode.arkSmallMetalSign": "小型鐵牌（Small Metal Sign）",
   "mode.arkWallWoodSign": "木製壁掛告示牌（Wooden Wall Sign）",
@@ -543,10 +568,14 @@ Object.assign(I18N["zh-TW"], {
   "mode.arkMetalBillboard": "金屬廣告牌（Metal Billboard）",
   "mode.arkSingleFlag": "單人旗幟（Single Flag）",
   "mode.arkFlag": "一般旗幟（Flag）",
+  "mode.arkMultiPanelFlag": "多面旗幟（Multi Panel Flag）",
   "mode.arkBroodmotherFlag": "蜘蛛 BOSS 旗幟（Broodmother Flag）",
   "mode.arkMegapithecusFlag": "猩猩 BOSS 旗幟（Megapithecus Flag）",
   "mode.arkDragonFlag": "噴火龍 BOSS 旗幟（Dragon Flag）",
+  "mode.arkShagRug": "毛絨地毯（Shag Rug）",
+  "mode.arkSpotlight": "聚光燈（Spotlight）",
   "layer.arkPaintingCanvas.art": "ARK 畫布圖片",
+  "layer.arkWarMap.art": "戰爭地圖圖片",
   "layer.arkSmallWoodSign.art": "小型木牌圖片",
   "layer.arkSmallMetalSign.art": "小型鐵牌圖片",
   "layer.arkWallWoodSign.art": "木製壁掛告示牌圖片",
@@ -555,9 +584,12 @@ Object.assign(I18N["zh-TW"], {
   "layer.arkMetalBillboard.art": "金屬廣告牌圖片",
   "layer.arkSingleFlag.art": "單人旗幟圖片",
   "layer.arkFlag.art": "一般旗幟圖片",
+  "layer.arkMultiPanelFlag.art": "多面旗幟圖片",
   "layer.arkBroodmotherFlag.art": "蜘蛛 BOSS 旗幟圖片",
   "layer.arkMegapithecusFlag.art": "猩猩 BOSS 旗幟圖片",
   "layer.arkDragonFlag.art": "噴火龍 BOSS 旗幟圖片",
+  "layer.arkShagRug.art": "毛絨地毯圖片",
+  "layer.arkSpotlight.art": "聚光燈圖片",
 });
 
 Object.assign(I18N.en, {
@@ -565,6 +597,7 @@ Object.assign(I18N.en, {
   appIntro: "Convert images locally in your browser into ARK / ATLAS-ready PNT/PNG files; nothing is uploaded. Place finished files in the matching game's MyPaintings folder.",
   "group.arkStructures": "ARK Structures and Canvases",
   "mode.arkPaintingCanvas": "Painting Canvas",
+  "mode.arkWarMap": "War Map",
   "mode.arkSmallWoodSign": "Wooden Sign",
   "mode.arkSmallMetalSign": "Metal Sign",
   "mode.arkWallWoodSign": "Wooden Wall Sign",
@@ -573,10 +606,14 @@ Object.assign(I18N.en, {
   "mode.arkMetalBillboard": "Metal Billboard",
   "mode.arkSingleFlag": "Single Flag",
   "mode.arkFlag": "Flag",
+  "mode.arkMultiPanelFlag": "Multi Panel Flag",
   "mode.arkBroodmotherFlag": "Broodmother Flag",
   "mode.arkMegapithecusFlag": "Megapithecus Flag",
   "mode.arkDragonFlag": "Dragon Flag",
+  "mode.arkShagRug": "Shag Rug",
+  "mode.arkSpotlight": "Spotlight",
   "layer.arkPaintingCanvas.art": "ARK painting canvas image",
+  "layer.arkWarMap.art": "War map image",
   "layer.arkSmallWoodSign.art": "Wooden sign image",
   "layer.arkSmallMetalSign.art": "Metal sign image",
   "layer.arkWallWoodSign.art": "Wooden wall sign image",
@@ -585,9 +622,12 @@ Object.assign(I18N.en, {
   "layer.arkMetalBillboard.art": "Metal billboard image",
   "layer.arkSingleFlag.art": "Single flag image",
   "layer.arkFlag.art": "Flag image",
+  "layer.arkMultiPanelFlag.art": "Multi panel flag image",
   "layer.arkBroodmotherFlag.art": "Broodmother flag image",
   "layer.arkMegapithecusFlag.art": "Megapithecus flag image",
   "layer.arkDragonFlag.art": "Dragon flag image",
+  "layer.arkShagRug.art": "Shag rug image",
+  "layer.arkSpotlight.art": "Spotlight image",
 });
 
 Object.assign(LANGUAGE_ALIASES.ja, {
@@ -643,6 +683,7 @@ const MODE_ICON_SVG = {
 
 const MODE_ICON_KIND = {
   arkPaintingCanvas: "canvas",
+  arkWarMap: "canvas",
   arkSmallWoodSign: "canvas",
   arkSmallMetalSign: "canvas",
   arkWallWoodSign: "canvas",
@@ -651,9 +692,12 @@ const MODE_ICON_KIND = {
   arkMetalBillboard: "canvas",
   arkSingleFlag: "flag",
   arkFlag: "flag",
+  arkMultiPanelFlag: "flag",
   arkBroodmotherFlag: "flag",
   arkMegapithecusFlag: "flag",
   arkDragonFlag: "flag",
+  arkShagRug: "canvas",
+  arkSpotlight: "canvas",
   singleSail: "sail",
   double: "sail",
   triple: "sail",
