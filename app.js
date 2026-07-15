@@ -241,6 +241,7 @@ const I18N = {
     uploadDropTitle: "選擇檔案 / 拖放 / 貼上圖片",
     uploadDropHint: "支援 PNG、JPG、WebP。點擊此區或拖放圖片到這裡。",
     guideTab: "操作說明",
+    discussionTab: "網站討論區",
     guideTitle: "操作說明",
     guideStep1Title: "1. 上傳",
     guideStep1Text: "可透過拖放、文件選擇器或剪貼簿添加圖片。PNG 和 JPG 格式均適用。",
@@ -353,6 +354,7 @@ const I18N = {
     uploadDropTitle: "Choose file / drop / paste image",
     uploadDropHint: "PNG, JPG, and WebP are supported. Click here or drop an image.",
     guideTab: "How to Use",
+    discussionTab: "Forum",
     guideTitle: "How to Use",
     guideStep1Title: "1. Upload",
     guideStep1Text: "Add images by drag and drop, file picker, or clipboard paste. PNG and JPG both work.",
@@ -457,6 +459,7 @@ const LANGUAGE_ALIASES = {
     seoIntro: "ARK / ATLAS 用 PNT 画像変換ツール。キャンバス、旗、帆、タトゥー、複数キャンバス壁画に対応します。",
     appIntro: "画像をこのブラウザー内だけで ATLAS 用の PNT/PNG に変換します。アップロードは行いません。帆、絵画、旗、タトゥー、複数キャンバスの壁画に対応し、完成ファイルは <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code> に入れてください。",
     language: "言語",
+    discussionTab: "フォーラム",
     modeLabel: "種類",
     previewTitle: "プレビュー",
     previewZoom: "表示",
@@ -494,6 +497,7 @@ const LANGUAGE_ALIASES = {
     seoIntro: "ARK / ATLAS PNT 이미지 변환기입니다. 캔버스, 깃발, 돛, 문신, 여러 캔버스 벽화를 지원합니다.",
     appIntro: "이미지를 이 브라우저 안에서만 ATLAS용 PNT/PNG로 변환합니다. 업로드하지 않으며 돛, 그림, 깃발, 문신, 여러 캔버스 벽화를 지원합니다. 완성 파일은 <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>에 넣으세요.",
     language: "언어",
+    discussionTab: "토론 포럼",
     modeLabel: "유형",
     previewTitle: "미리보기",
     previewZoom: "보기",
@@ -531,6 +535,7 @@ const LANGUAGE_ALIASES = {
     seoIntro: "ตัวแปลงรูปภาพ ARK / ATLAS PNT สำหรับผู้เล่นเกมเอาชีวิตรอด รองรับผ้าใบ ธง ใบเรือ รอยสัก และผนังภาพหลายผืน",
     appIntro: "แปลงรูปภาพในเบราว์เซอร์เครื่องนี้เป็นไฟล์ PNT/PNG สำหรับ ATLAS โดยไม่อัปโหลด รองรับใบเรือ ภาพวาด ธง รอยสัก และผนังภาพหลายผืน จากนั้นนำไฟล์ไปไว้ที่ <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>",
     language: "ภาษา",
+    discussionTab: "ฟอรัม",
     modeLabel: "ประเภท",
     previewTitle: "ตัวอย่าง",
     previewZoom: "มุมมอง",
@@ -568,6 +573,7 @@ const LANGUAGE_ALIASES = {
     seoIntro: "Конвертер изображений ARK / ATLAS PNT для survival games: холсты, флаги, паруса, татуировки и стены из нескольких картин.",
     appIntro: "Преобразует изображения локально в браузере в файлы PNT/PNG для ATLAS, без загрузки в сеть. Поддерживает паруса, картины, флаги, татуировки и стены из нескольких полотен. Готовые файлы поместите в <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>.",
     language: "Язык",
+    discussionTab: "Форум",
     modeLabel: "Тип",
     previewTitle: "Предпросмотр",
     previewZoom: "Вид",
@@ -875,7 +881,7 @@ function ensureGameTabs() {
     <button type="button" class="gameTab" data-game="ark"><span class="gameTabIcon" aria-hidden="true"><svg viewBox="0 0 82 70" role="img"><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M6 31c1-8 7-14 18-15 9-1 13 1 22-6 4 0 7 3 12 2 7-1 13 2 20 9"/><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M7 32c8 3 22 3 35 0 7-1 14-5 20-8-5 8-13 13-22 17"/><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M22 59c11-2 20-9 27-19M47 55c6 2 10 6 12 12"/><circle cx="42" cy="17" r="5.4" fill="currentColor"/><circle cx="40" cy="15" r="1.8" fill="#fff"/><circle cx="13" cy="24" r="3.3" fill="currentColor"/><path fill="currentColor" d="M9 36l3 7 2-7h-5Zm7 1 3 7 2-7h-5Zm7 0 3 8 2-8h-5Zm7 0 3 7 2-8-5 1Zm7-1 3 7 2-8-5 1Zm-13 20 4-7 2 7h-6Zm7-3 4-7 2 7h-6Zm7-4 4-7 2 7h-6Z"/></svg></span><span>ARK</span></button>
     <button type="button" class="gameTab" data-game="atlas"><span class="gameTabIcon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path fill="currentColor" d="M29 7h4v7h-4zM34 8h16l-6 4 6 4H34V8ZM17 19h29c-1 8-1 13 1 21H16c-3-8-3-14 1-21ZM13 43h38l-3 7H16l-3-7ZM28 52h6v4h-6zM6 46h52c-1 8-4 13-9 15H16C10 59 7 54 6 46Z"/></svg></span><span>Atlas</span></button>
     <button type="button" class="gameTab" data-guide="guide"><span aria-hidden="true">?</span><span data-role="guideTabLabel">${t("guideTab")}</span></button>
-    <a class="gameTab gameTabLink" href="https://groups.google.com/g/pnt-tool/" target="_blank" rel="noopener"><span aria-hidden="true">☷</span><span>網站討論區</span></a>
+    <a class="gameTab gameTabLink" href="https://groups.google.com/g/pnt-tool/" target="_blank" rel="noopener"><span aria-hidden="true">☷</span><span data-role="discussionTabLabel">${t("discussionTab")}</span></a>
   `;
   els.appTitle.insertAdjacentElement("afterend", tabs);
   tabs.addEventListener("click", (event) => {
@@ -957,6 +963,8 @@ function applyLanguage() {
   setText(els.guideStep4Text, "guideStep4Text");
   const guideLabel = document.querySelector("[data-role=guideTabLabel]");
   if (guideLabel) guideLabel.textContent = t("guideTab");
+  const discussionLabel = document.querySelector("[data-role=discussionTabLabel]");
+  if (discussionLabel) discussionLabel.textContent = t("discussionTab");
   updateLanguageBar();
   setText(els.modeLabel, "modeLabel");
   setText(els.wallColsLabel, "wallCols");
