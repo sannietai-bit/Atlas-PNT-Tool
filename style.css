@@ -1,13 +1,16 @@
 :root {
   color-scheme: dark;
   --bg: #172029;
-  --panel: #191d21;
-  --panel2: #20262b;
+  --panel: rgba(25, 29, 33, .82);
+  --panel2: rgba(32, 38, 43, .78);
   --text: #f2f5f7;
   --muted: #9da8b1;
   --line: #34404a;
   --accent: #48c4d8;
   --danger: #ff5c5c;
+  --atlas-bg-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-nDBr6xN4Pw7oghPCpgOLZGsglMTyVdq2kBXgO5fmpx4JwTyJXeO2LZCX&s=10");
+  --ark-bg-image: url("https://appuals.com/wp-content/uploads/2018/12/6-7.png");
+  --page-bg-image: var(--atlas-bg-image);
 }
 
 * {
@@ -23,12 +26,20 @@ body {
   margin: 0;
   font-family: "Microsoft JhengHei", "Segoe UI", sans-serif;
   background:
-    linear-gradient(rgba(23, 32, 41, .82), rgba(23, 32, 41, .88)),
-    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-nDBr6xN4Pw7oghPCpgOLZGsglMTyVdq2kBXgO5fmpx4JwTyJXeO2LZCX&s=10") center / cover fixed;
+    linear-gradient(rgba(23, 32, 41, .68), rgba(23, 32, 41, .78)),
+    var(--page-bg-image) center / cover fixed;
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+body[data-game="ark"] {
+  --page-bg-image: var(--ark-bg-image);
+}
+
+body[data-game="atlas"] {
+  --page-bg-image: var(--atlas-bg-image);
 }
 
 .app {
@@ -50,6 +61,7 @@ body {
   padding: 12px;
   min-height: 0;
   min-width: 0;
+  backdrop-filter: blur(5px);
 }
 
 .leftPanel,

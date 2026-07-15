@@ -829,6 +829,7 @@ function ensureGameTabs() {
 }
 
 function updateGameTabs() {
+  document.body.dataset.game = state.game;
   for (const button of document.querySelectorAll(".gameTab[data-game]")) {
     button.classList.toggle("isActive", button.dataset.game === state.game);
   }
