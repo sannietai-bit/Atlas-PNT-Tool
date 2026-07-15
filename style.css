@@ -72,8 +72,8 @@ body[data-game="atlas"] {
 
 .leftPanel,
 .rightPanel {
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
+  overflow-y: auto;
+  scrollbar-gutter: auto;
   height: calc(100vh - 150px);
   min-height: 520px;
 }
@@ -132,7 +132,7 @@ body[data-game="atlas"] {
 .leftPanel::-webkit-scrollbar-track,
 .rightPanel::-webkit-scrollbar-track,
 .canvasWrap::-webkit-scrollbar-track {
-  background: #101418;
+  background: transparent;
   border-radius: 999px;
 }
 
@@ -141,7 +141,8 @@ body[data-game="atlas"] {
 .canvasWrap::-webkit-scrollbar-thumb {
   background: #4a5864;
   border-radius: 999px;
-  border: 2px solid #101418;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 .leftPanel::-webkit-scrollbar-thumb:hover,
