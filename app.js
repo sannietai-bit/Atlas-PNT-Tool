@@ -225,6 +225,9 @@ const GAME_MODE_GROUPS = {
 const I18N = {
   "zh-TW": {
     appTitle: "ATLAS PNT 製作工具",
+    seoTitle: "PNT Tool - ARK / ATLAS PNT 圖片轉換器",
+    seoDescription: "PNT Tool 是 ARK / ATLAS 遊戲圖片轉換器，可將 PNG/JPG/WebP 製作成 PNT/PNG，支援畫布、旗幟、船帆、人物紋身與多幅畫作拼圖牆，適合生存遊戲玩家使用。",
+    seoIntro: "ARK / ATLAS PNT 圖片轉換器，支援畫布、旗幟、船帆、人物紋身與多幅畫作拼圖牆，適合生存遊戲玩家製作遊戲圖片。",
     appIntro: "將圖片在本機瀏覽器轉成 ATLAS 可用的 PNT/PNG，不會上傳，支援船帆、畫作、旗幟、人物紋身與多幅畫作拼圖牆；完成後放入 <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>。",
     language: "語言",
     modeLabel: "類型",
@@ -320,6 +323,9 @@ const I18N = {
   },
   en: {
     appTitle: "ATLAS PNT Maker",
+    seoTitle: "PNT Tool - ARK / ATLAS PNT Image Converter",
+    seoDescription: "PNT Tool converts PNG, JPG, and WebP images into ARK and ATLAS PNT/PNG game paint files for canvases, flags, sails, tattoos, and survival game wall mosaics.",
+    seoIntro: "ARK / ATLAS PNT image converter for survival game players, supporting canvases, flags, sails, tattoos, and multi-canvas wall mosaics.",
     appIntro: "Convert images locally in your browser into ATLAS-ready PNT/PNG files; nothing is uploaded, and it supports sails, paintings, flags, tattoos, and multi-canvas wall mosaics. Place finished files in <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>.",
     language: "Language",
     modeLabel: "Type",
@@ -418,6 +424,9 @@ const I18N = {
 const LANGUAGE_ALIASES = {
   ja: {
     appTitle: "PNT Tool",
+    seoTitle: "PNT Tool - ARK / ATLAS PNT 画像変換ツール",
+    seoDescription: "ARK / ATLAS 用の PNT/PNG を作成できる画像変換ツール。キャンバス、旗、帆、タトゥー、サバイバルゲーム向けの壁画に対応します。",
+    seoIntro: "ARK / ATLAS 用 PNT 画像変換ツール。キャンバス、旗、帆、タトゥー、複数キャンバス壁画に対応します。",
     appIntro: "画像をこのブラウザー内だけで ATLAS 用の PNT/PNG に変換します。アップロードは行いません。帆、絵画、旗、タトゥー、複数キャンバスの壁画に対応し、完成ファイルは <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code> に入れてください。",
     language: "言語",
     modeLabel: "種類",
@@ -452,6 +461,9 @@ const LANGUAGE_ALIASES = {
   },
   ko: {
     appTitle: "PNT Tool",
+    seoTitle: "PNT Tool - ARK / ATLAS PNT 이미지 변환기",
+    seoDescription: "ARK / ATLAS용 PNT/PNG 게임 페인트 파일을 만드는 이미지 변환기입니다. 캔버스, 깃발, 돛, 문신, 벽화 제작을 지원합니다.",
+    seoIntro: "ARK / ATLAS PNT 이미지 변환기입니다. 캔버스, 깃발, 돛, 문신, 여러 캔버스 벽화를 지원합니다.",
     appIntro: "이미지를 이 브라우저 안에서만 ATLAS용 PNT/PNG로 변환합니다. 업로드하지 않으며 돛, 그림, 깃발, 문신, 여러 캔버스 벽화를 지원합니다. 완성 파일은 <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>에 넣으세요.",
     language: "언어",
     modeLabel: "유형",
@@ -486,6 +498,9 @@ const LANGUAGE_ALIASES = {
   },
   th: {
     appTitle: "PNT Tool",
+    seoTitle: "PNT Tool - ตัวแปลงรูปภาพ ARK / ATLAS PNT",
+    seoDescription: "เครื่องมือแปลงรูปภาพเป็นไฟล์ PNT/PNG สำหรับ ARK และ ATLAS รองรับผ้าใบ ธง ใบเรือ รอยสัก และผนังภาพหลายผืนสำหรับผู้เล่นเกมเอาชีวิตรอด",
+    seoIntro: "ตัวแปลงรูปภาพ ARK / ATLAS PNT สำหรับผู้เล่นเกมเอาชีวิตรอด รองรับผ้าใบ ธง ใบเรือ รอยสัก และผนังภาพหลายผืน",
     appIntro: "แปลงรูปภาพในเบราว์เซอร์เครื่องนี้เป็นไฟล์ PNT/PNG สำหรับ ATLAS โดยไม่อัปโหลด รองรับใบเรือ ภาพวาด ธง รอยสัก และผนังภาพหลายผืน จากนั้นนำไฟล์ไปไว้ที่ <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>",
     language: "ภาษา",
     modeLabel: "ประเภท",
@@ -520,6 +535,9 @@ const LANGUAGE_ALIASES = {
   },
   ru: {
     appTitle: "PNT Tool",
+    seoTitle: "PNT Tool - конвертер изображений ARK / ATLAS PNT",
+    seoDescription: "Конвертер изображений в файлы PNT/PNG для ARK и ATLAS: холсты, флаги, паруса, татуировки и стены из нескольких картин для игроков survival games.",
+    seoIntro: "Конвертер изображений ARK / ATLAS PNT для survival games: холсты, флаги, паруса, татуировки и стены из нескольких картин.",
     appIntro: "Преобразует изображения локально в браузере в файлы PNT/PNG для ATLAS, без загрузки в сеть. Поддерживает паруса, картины, флаги, татуировки и стены из нескольких полотен. Готовые файлы поместите в <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>.",
     language: "Язык",
     modeLabel: "Тип",
@@ -714,6 +732,7 @@ const MODE_ICON_KIND = {
 const els = {
   language: document.getElementById("languageSelect"),
   appTitle: document.getElementById("appTitle"),
+  seoIntro: document.getElementById("seoIntro"),
   languageLabel: document.getElementById("languageLabel"),
   modeLabel: document.getElementById("modeLabel"),
   mode: document.getElementById("modeSelect"),
@@ -862,8 +881,11 @@ function layerLabel(layer) {
 function applyLanguage() {
   ensureGameTabs();
   document.documentElement.lang = state.language === "zh-TW" ? "zh-Hant" : state.language;
-  document.title = t("appTitle");
+  document.title = t("seoTitle", t("appTitle"));
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.setAttribute("content", t("seoDescription", description.getAttribute("content") || ""));
   setText(els.appTitle, "appTitle");
+  setText(els.seoIntro, "seoIntro");
   setText(els.languageLabel, "language");
   setText(els.modeLabel, "modeLabel");
   setText(els.wallColsLabel, "wallCols");

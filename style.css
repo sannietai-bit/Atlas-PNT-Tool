@@ -116,6 +116,14 @@ body[data-game="atlas"] {
   margin-bottom: 4px;
 }
 
+.seoIntro {
+  max-width: 860px;
+  margin: 8px 0 0;
+  color: #c7d4dd;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .gameTabs {
   display: flex;
   align-items: end;
