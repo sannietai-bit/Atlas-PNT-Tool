@@ -72,6 +72,46 @@ body[data-game="atlas"] {
   min-height: 520px;
 }
 
+.leftPanel,
+.previewPanel,
+.rightPanel {
+  order: 2;
+}
+
+.guidePanel {
+  grid-column: 1 / -1;
+  order: 1;
+}
+
+.guideSteps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.guideSteps article {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel2);
+}
+
+.guideSteps strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.guideSteps p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
 .leftPanel::-webkit-scrollbar,
 .rightPanel::-webkit-scrollbar,
 .canvasWrap::-webkit-scrollbar {
@@ -199,6 +239,25 @@ body[data-game="atlas"] {
 
 .languageField select {
   min-height: 34px;
+}
+
+.workflowTitle,
+.previewSubhead {
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.workflowTitle {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.previewSubhead {
+  margin: 0 0 8px;
+  color: #dce6ed;
+  font-size: 14px;
+  text-align: center;
 }
 
 h1, h2 {
@@ -407,6 +466,41 @@ input[type="color"] {
   color: var(--text);
   font-size: 14px;
   font-weight: 700;
+}
+
+.uploadDrop {
+  display: grid;
+  gap: 4px;
+  min-height: 70px;
+  align-content: center;
+  padding: 10px;
+  border: 1px dashed #70808e;
+  border-radius: 8px;
+  background: rgba(17, 24, 32, .62);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.uploadDrop:hover,
+.uploadDrop:focus-visible,
+.uploadDrop.isDragOver {
+  border-color: var(--accent);
+  background: rgba(72, 196, 216, .12);
+  outline: none;
+}
+
+.uploadDrop strong {
+  font-size: 13px;
+}
+
+.uploadDrop span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.uploadDrop input {
+  display: none;
 }
 
 .check {
@@ -626,6 +720,10 @@ canvas {
   }
 
   .actions, .grid2, .grid3, .quickActions {
+    grid-template-columns: 1fr;
+  }
+
+  .guideSteps {
     grid-template-columns: 1fr;
   }
 

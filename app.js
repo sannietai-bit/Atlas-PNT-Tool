@@ -235,7 +235,21 @@ const I18N = {
     wallRows: "直向數量",
     wallPrefix: "前綴",
     wallHint: "檔名格式：Kxy_Sign_PaintingCanvas_C，x 是橫軸，y 是直軸。",
-    previewTitle: "製作預覽",
+    previewTitle: "遊戲內預覽",
+    cropSelectTitle: "選擇影像裁切",
+    cropPreviewTitle: "裁剪預覽",
+    uploadDropTitle: "選擇檔案 / 拖放 / 貼上圖片",
+    uploadDropHint: "支援 PNG、JPG、WebP。點擊此區或拖放圖片到這裡。",
+    guideTab: "操作說明",
+    guideTitle: "操作說明",
+    guideStep1Title: "1. 上傳",
+    guideStep1Text: "可透過拖放、文件選擇器或剪貼簿添加圖片。PNG 和 JPG 格式均適用。",
+    guideStep2Title: "2. 調整",
+    guideStep2Text: "選擇遊戲和物件類型，微調顏色，查看遊戲內預覽，所見即所得。",
+    guideStep3Title: "3. 載入遊戲",
+    guideStep3Text: "將 .pnt 檔案放入 MyPaintings 資料夾：ShooterGame\\Saved\\MyPaintings。預設值為 C:\\Steam\\steamapps\\common\\遊戲名稱\\ShooterGame\\Saved\\MyPaintings。",
+    guideStep4Title: "4. 遊戲中染色",
+    guideStep4Text: "背包中準備所需染料後，裝備道具「筆刷」，靠近物件按左鍵，選擇「載入畫作」並開始染色即可完成。",
     previewZoom: "檢視",
     colorCount: "{count} 色",
     fitMode: "放置方式",
@@ -333,7 +347,21 @@ const I18N = {
     wallRows: "Rows",
     wallPrefix: "Prefix",
     wallHint: "File format: Kxy_Sign_PaintingCanvas_C, where x is horizontal and y is vertical.",
-    previewTitle: "Preview",
+    previewTitle: "In-game Preview",
+    cropSelectTitle: "Choose Image and Crop",
+    cropPreviewTitle: "Crop Preview",
+    uploadDropTitle: "Choose file / drop / paste image",
+    uploadDropHint: "PNG, JPG, and WebP are supported. Click here or drop an image.",
+    guideTab: "How to Use",
+    guideTitle: "How to Use",
+    guideStep1Title: "1. Upload",
+    guideStep1Text: "Add images by drag and drop, file picker, or clipboard paste. PNG and JPG both work.",
+    guideStep2Title: "2. Adjust",
+    guideStep2Text: "Choose the game and object type, fine-tune colors, and check the in-game preview. What you see is what you get.",
+    guideStep3Title: "3. Load in Game",
+    guideStep3Text: "Put the .pnt file in the MyPaintings folder: ShooterGame\\Saved\\MyPaintings. Default path: C:\\Steam\\steamapps\\common\\GameName\\ShooterGame\\Saved\\MyPaintings.",
+    guideStep4Title: "4. Paint in Game",
+    guideStep4Text: "Prepare the required dyes in your inventory, equip the Paintbrush, left-click near the object, choose Load Painting, then start painting.",
     previewZoom: "View",
     colorCount: "{count} colors",
     fitMode: "Fit",
@@ -733,6 +761,18 @@ const els = {
   language: document.getElementById("languageSelect"),
   appTitle: document.getElementById("appTitle"),
   seoIntro: document.getElementById("seoIntro"),
+  cropSelectTitle: document.getElementById("cropSelectTitle"),
+  cropPreviewTitle: document.getElementById("cropPreviewTitle"),
+  guidePanel: document.getElementById("guidePanel"),
+  guideTitle: document.getElementById("guideTitle"),
+  guideStep1Title: document.getElementById("guideStep1Title"),
+  guideStep1Text: document.getElementById("guideStep1Text"),
+  guideStep2Title: document.getElementById("guideStep2Title"),
+  guideStep2Text: document.getElementById("guideStep2Text"),
+  guideStep3Title: document.getElementById("guideStep3Title"),
+  guideStep3Text: document.getElementById("guideStep3Text"),
+  guideStep4Title: document.getElementById("guideStep4Title"),
+  guideStep4Text: document.getElementById("guideStep4Text"),
   languageLabel: document.getElementById("languageLabel"),
   modeLabel: document.getElementById("modeLabel"),
   mode: document.getElementById("modeSelect"),
@@ -791,6 +831,7 @@ const state = {
   picked: null,
   lastBuffer: null,
   lastPreview: null,
+  activeLayerKey: null,
   language: "zh-TW",
   game: "atlas",
 };
@@ -834,10 +875,16 @@ function ensureGameTabs() {
   tabs.innerHTML = `
     <button type="button" class="gameTab" data-game="ark"><span class="gameTabIcon" aria-hidden="true"><svg viewBox="0 0 82 70" role="img"><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M6 31c1-8 7-14 18-15 9-1 13 1 22-6 4 0 7 3 12 2 7-1 13 2 20 9"/><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M7 32c8 3 22 3 35 0 7-1 14-5 20-8-5 8-13 13-22 17"/><path fill="none" stroke="currentColor" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" d="M22 59c11-2 20-9 27-19M47 55c6 2 10 6 12 12"/><circle cx="42" cy="17" r="5.4" fill="currentColor"/><circle cx="40" cy="15" r="1.8" fill="#fff"/><circle cx="13" cy="24" r="3.3" fill="currentColor"/><path fill="currentColor" d="M9 36l3 7 2-7h-5Zm7 1 3 7 2-7h-5Zm7 0 3 8 2-8h-5Zm7 0 3 7 2-8-5 1Zm7-1 3 7 2-8-5 1Zm-13 20 4-7 2 7h-6Zm7-3 4-7 2 7h-6Zm7-4 4-7 2 7h-6Z"/></svg></span><span>ARK</span></button>
     <button type="button" class="gameTab" data-game="atlas"><span class="gameTabIcon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path fill="currentColor" d="M29 7h4v7h-4zM34 8h16l-6 4 6 4H34V8ZM17 19h29c-1 8-1 13 1 21H16c-3-8-3-14 1-21ZM13 43h38l-3 7H16l-3-7ZM28 52h6v4h-6zM6 46h52c-1 8-4 13-9 15H16C10 59 7 54 6 46Z"/></svg></span><span>Atlas</span></button>
+    <button type="button" class="gameTab" data-guide="guide"><span aria-hidden="true">?</span><span data-role="guideTabLabel">${t("guideTab")}</span></button>
     <a class="gameTab gameTabLink" href="https://groups.google.com/g/pnt-tool/" target="_blank" rel="noopener"><span aria-hidden="true">☷</span><span>網站討論區</span></a>
   `;
   els.appTitle.insertAdjacentElement("afterend", tabs);
   tabs.addEventListener("click", (event) => {
+    const guideButton = event.target.closest("[data-guide]");
+    if (guideButton) {
+      toggleGuidePanel();
+      return;
+    }
     const button = event.target.closest("[data-game]");
     if (!button || button.dataset.game === state.game) return;
     state.game = button.dataset.game;
@@ -853,6 +900,15 @@ function updateGameTabs() {
   for (const button of document.querySelectorAll(".gameTab[data-game]")) {
     button.classList.toggle("isActive", button.dataset.game === state.game);
   }
+  const guideButton = document.querySelector(".gameTab[data-guide]");
+  if (guideButton && els.guidePanel) guideButton.classList.toggle("isActive", !els.guidePanel.hidden);
+}
+
+function toggleGuidePanel(force) {
+  if (!els.guidePanel) return;
+  els.guidePanel.hidden = typeof force === "boolean" ? !force : !els.guidePanel.hidden;
+  updateGameTabs();
+  if (!els.guidePanel.hidden) els.guidePanel.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function rebuildModeSelect(preserveMode = true) {
@@ -886,6 +942,19 @@ function applyLanguage() {
   if (description) description.setAttribute("content", t("seoDescription", description.getAttribute("content") || ""));
   setText(els.appTitle, "appTitle");
   setText(els.seoIntro, "seoIntro");
+  setText(els.cropSelectTitle, "cropSelectTitle");
+  setText(els.cropPreviewTitle, "cropPreviewTitle");
+  setText(els.guideTitle, "guideTitle");
+  setText(els.guideStep1Title, "guideStep1Title");
+  setText(els.guideStep1Text, "guideStep1Text");
+  setText(els.guideStep2Title, "guideStep2Title");
+  setText(els.guideStep2Text, "guideStep2Text");
+  setText(els.guideStep3Title, "guideStep3Title");
+  setText(els.guideStep3Text, "guideStep3Text");
+  setText(els.guideStep4Title, "guideStep4Title");
+  setText(els.guideStep4Text, "guideStep4Text");
+  const guideLabel = document.querySelector("[data-role=guideTabLabel]");
+  if (guideLabel) guideLabel.textContent = t("guideTab");
   setText(els.languageLabel, "language");
   setText(els.modeLabel, "modeLabel");
   setText(els.wallColsLabel, "wallCols");
@@ -938,6 +1007,7 @@ function colorToRgba(hex) {
 
 function loadFile(file, key) {
   if (!file) return;
+  state.activeLayerKey = key;
   const img = new Image();
   img.onload = () => {
     state.images[key] = img;
@@ -964,13 +1034,18 @@ function setupUploads({ preserveValues = false } = {}) {
   updateWallSettings();
   els.uploads.innerHTML = "";
   state.controls = {};
+  state.activeLayerKey = config.layers[0] && config.layers[0].key;
 
   for (const layer of config.layers) {
     const row = document.createElement("div");
     row.className = "uploadRow";
     row.innerHTML = `
       <div class="uploadTitle">${layerLabel(layer)}</div>
-      <input type="file" accept="image/*">
+      <div class="uploadDrop" tabindex="0" role="button">
+        <strong>${t("uploadDropTitle")}</strong>
+        <span>${t("uploadDropHint")}</span>
+        <input type="file" accept="image/png,image/jpeg,image/webp,image/*">
+      </div>
       <label class="field"><span>${t("scale")}</span><input data-role="scale" type="range" min="50" max="180" value="100"></label>
       <div class="grid2">
         <label class="field"><span>${t("moveX")}</span><input data-role="x" type="range" min="-80" max="80" value="0"></label>
@@ -983,6 +1058,7 @@ function setupUploads({ preserveValues = false } = {}) {
       </div>
     `;
     const fileInput = row.querySelector("input[type=file]");
+    const drop = row.querySelector(".uploadDrop");
     const scale = row.querySelector("[data-role=scale]");
     const x = row.querySelector("[data-role=x]");
     const y = row.querySelector("[data-role=y]");
@@ -996,6 +1072,34 @@ function setupUploads({ preserveValues = false } = {}) {
       rotate.value = previousControls[layer.key].rotate;
     }
     state.controls[layer.key] = { scale, x, y, rotate };
+    const setActiveLayer = () => { state.activeLayerKey = layer.key; };
+    const loadDroppedFile = (files) => {
+      const file = Array.from(files || []).find((item) => item && item.type && item.type.startsWith("image/"));
+      if (file) loadFile(file, layer.key);
+    };
+    drop.addEventListener("click", () => {
+      setActiveLayer();
+      fileInput.click();
+    });
+    drop.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        setActiveLayer();
+        fileInput.click();
+      }
+    });
+    drop.addEventListener("focus", setActiveLayer);
+    drop.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      drop.classList.add("isDragOver");
+      setActiveLayer();
+    });
+    drop.addEventListener("dragleave", () => drop.classList.remove("isDragOver"));
+    drop.addEventListener("drop", (event) => {
+      event.preventDefault();
+      drop.classList.remove("isDragOver");
+      loadDroppedFile(event.dataTransfer.files);
+    });
     fileInput.addEventListener("change", () => loadFile(fileInput.files[0], layer.key));
     scale.addEventListener("input", render);
     x.addEventListener("input", render);
@@ -1012,6 +1116,21 @@ function setupUploads({ preserveValues = false } = {}) {
     els.uploads.appendChild(row);
   }
   render();
+}
+
+function pasteImageFromClipboard(event) {
+  const items = Array.from(event.clipboardData && event.clipboardData.items ? event.clipboardData.items : []);
+  const file = items
+    .filter((item) => item.kind === "file" && item.type.startsWith("image/"))
+    .map((item) => item.getAsFile())
+    .find(Boolean);
+  if (!file) return;
+  const config = MODE_CONFIG[els.mode.value];
+  const fallbackLayer = config && config.layers[0] && config.layers[0].key;
+  const key = state.activeLayerKey || fallbackLayer;
+  if (!key) return;
+  event.preventDefault();
+  loadFile(file, key);
 }
 
 function updateWallSettings() {
@@ -1816,6 +1935,7 @@ els.outputName.addEventListener("input", () => {
 });
 els.previewZoom.addEventListener("input", updatePreviewZoom);
 window.addEventListener("resize", updatePreviewZoom);
+document.addEventListener("paste", pasteImageFromClipboard);
 els.pngBtn.addEventListener("click", downloadPng);
 els.pntBtn.addEventListener("click", downloadPnt);
 els.canvas.addEventListener("click", (event) => {
