@@ -306,7 +306,7 @@ const I18N = {
     "quality.smooth": "平滑色塊",
     "quality.pixel": "像素風",
     "quality.lineart": "線稿 / Logo",
-    "quality.bw": "黑白兩色",
+    "quality.bw": "黑白灰階描邊",
     "remove.none": "不去背",
     "remove.dark": "黑底/深色去背",
     "remove.edgeDark": "只去外圍黑底",
@@ -418,7 +418,7 @@ const I18N = {
     "quality.smooth": "Smooth blocks",
     "quality.pixel": "Pixel art",
     "quality.lineart": "Line art / Logo",
-    "quality.bw": "Black and white",
+    "quality.bw": "Grayscale outline",
     "remove.none": "None",
     "remove.dark": "Dark background",
     "remove.edgeDark": "Outer dark only",
@@ -682,7 +682,7 @@ Object.assign(LANGUAGE_ALIASES.ja, {
   wallCols: "横数", wallRows: "縦数", wallPrefix: "接頭辞", threshold: "背景削除の強さ", fillColor: "背景色", transparentBg: "削除後は透明にする", showFrames: "枠線を表示",
   "fit.contain": "全体を入れる", "fit.cover": "塗りつぶし / 切り抜き",
   "palette.all": "すべて", "palette.5": "最大 5 色", "palette.10": "最大 10 色", "palette.20": "最大 20 色", "palette.30": "最大 30 色",
-  "quality.dither": "写真最適化（ディザー）", "quality.softDither": "写真ソフト", "quality.sharpDither": "写真シャープ", "quality.smooth": "滑らかな色面", "quality.pixel": "ピクセル風", "quality.lineart": "線画 / ロゴ", "quality.bw": "白黒 2 色",
+  "quality.dither": "写真最適化（ディザー）", "quality.softDither": "写真ソフト", "quality.sharpDither": "写真シャープ", "quality.smooth": "滑らかな色面", "quality.pixel": "ピクセル風", "quality.lineart": "線画 / ロゴ", "quality.bw": "グレー階調＋輪郭",
   "remove.none": "削除しない", "remove.dark": "黒/暗色背景", "remove.edgeDark": "外側の暗色のみ", "remove.checker": "白灰チェック", "remove.white": "白背景",
   "layer.singleSail.art": "単帆", "layer.double.top": "上帆", "layer.double.bottom": "下帆", "layer.triple.top": "上帆", "layer.triple.middle": "中帆", "layer.triple.bottom": "下帆",
   "layer.painting.art": "絵画画像", "layer.wallCanvas.art": "壁キャンバス画像", "layer.wall.art": "壁モザイク画像", "layer.singleFlag.art": "片面旗画像", "layer.flag.art": "大型旗画像",
@@ -693,7 +693,7 @@ Object.assign(LANGUAGE_ALIASES.ko, {
   wallCols: "가로 수", wallRows: "세로 수", wallPrefix: "접두어", threshold: "배경 제거 강도", fillColor: "배경색", transparentBg: "제거 후 투명 유지", showFrames: "프레임 표시",
   "fit.contain": "전체 넣기", "fit.cover": "채우기 / 자르기",
   "palette.all": "전체", "palette.5": "최대 5색", "palette.10": "최대 10색", "palette.20": "최대 20색", "palette.30": "최대 30색",
-  "quality.dither": "사진 최적화(디더)", "quality.softDither": "부드러운 사진", "quality.sharpDither": "선명한 사진", "quality.smooth": "부드러운 색면", "quality.pixel": "픽셀풍", "quality.lineart": "선화 / 로고", "quality.bw": "흑백 2색",
+  "quality.dither": "사진 최적화(디더)", "quality.softDither": "부드러운 사진", "quality.sharpDither": "선명한 사진", "quality.smooth": "부드러운 색면", "quality.pixel": "픽셀풍", "quality.lineart": "선화 / 로고", "quality.bw": "회색조 윤곽",
   "remove.none": "사용 안 함", "remove.dark": "검정/어두운 배경", "remove.edgeDark": "외곽 어두운 색만", "remove.checker": "흰회색 격자", "remove.white": "흰 배경",
   "layer.singleSail.art": "단일 돛", "layer.double.top": "위 돛", "layer.double.bottom": "아래 돛", "layer.triple.top": "위 돛", "layer.triple.middle": "중간 돛", "layer.triple.bottom": "아래 돛",
   "layer.painting.art": "그림 이미지", "layer.wallCanvas.art": "벽 캔버스 이미지", "layer.wall.art": "벽 퍼즐 이미지", "layer.singleFlag.art": "단면 깃발 이미지", "layer.flag.art": "다면 깃발 이미지",
@@ -704,7 +704,7 @@ Object.assign(LANGUAGE_ALIASES.th, {
   wallCols: "จำนวนแนวนอน", wallRows: "จำนวนแนวตั้ง", wallPrefix: "คำนำหน้า", threshold: "ความแรงลบพื้นหลัง", fillColor: "สีพื้นหลัง", transparentBg: "คงพื้นหลังโปร่งใส", showFrames: "แสดงกรอบ",
   "fit.contain": "ใส่ทั้งภาพ", "fit.cover": "เต็มกรอบ / ครอบตัด",
   "palette.all": "ทั้งหมด", "palette.5": "สูงสุด 5 สี", "palette.10": "สูงสุด 10 สี", "palette.20": "สูงสุด 20 สี", "palette.30": "สูงสุด 30 สี",
-  "quality.dither": "ปรับภาพถ่าย (ดิเทอร์)", "quality.softDither": "ภาพถ่ายนุ่ม", "quality.sharpDither": "ภาพถ่ายคม", "quality.smooth": "สีเรียบ", "quality.pixel": "พิกเซล", "quality.lineart": "ลายเส้น / โลโก้", "quality.bw": "ขาวดำ 2 สี",
+  "quality.dither": "ปรับภาพถ่าย (ดิเทอร์)", "quality.softDither": "ภาพถ่ายนุ่ม", "quality.sharpDither": "ภาพถ่ายคม", "quality.smooth": "สีเรียบ", "quality.pixel": "พิกเซล", "quality.lineart": "ลายเส้น / โลโก้", "quality.bw": "เทาและเส้นขอบ",
   "remove.none": "ไม่ลบ", "remove.dark": "พื้นหลังดำ/เข้ม", "remove.edgeDark": "เฉพาะขอบมืด", "remove.checker": "ตารางขาวเทา", "remove.white": "พื้นหลังขาว",
   "layer.singleSail.art": "ใบเรือเดี่ยว", "layer.double.top": "ใบบน", "layer.double.bottom": "ใบล่าง", "layer.triple.top": "ใบบน", "layer.triple.middle": "ใบกลาง", "layer.triple.bottom": "ใบล่าง",
   "layer.painting.art": "ภาพวาด", "layer.wallCanvas.art": "ภาพผนังเดี่ยว", "layer.wall.art": "ภาพผนังหลายผืน", "layer.singleFlag.art": "ภาพธงหน้าเดียว", "layer.flag.art": "ภาพธงหลายแผง",
@@ -715,7 +715,7 @@ Object.assign(LANGUAGE_ALIASES.ru, {
   wallCols: "Столбцы", wallRows: "Строки", wallPrefix: "Префикс", threshold: "Сила удаления", fillColor: "Цвет фона", transparentBg: "Оставлять прозрачным", showFrames: "Показывать рамки",
   "fit.contain": "Поместить целиком", "fit.cover": "Заполнить / обрезать",
   "palette.all": "Все", "palette.5": "До 5 цветов", "palette.10": "До 10 цветов", "palette.20": "До 20 цветов", "palette.30": "До 30 цветов",
-  "quality.dither": "Фото с дизерингом", "quality.softDither": "Мягкое фото", "quality.sharpDither": "Резкое фото", "quality.smooth": "Гладкие цвета", "quality.pixel": "Пиксельный стиль", "quality.lineart": "Лайнарт / Лого", "quality.bw": "Черно-белый",
+  "quality.dither": "Фото с дизерингом", "quality.softDither": "Мягкое фото", "quality.sharpDither": "Резкое фото", "quality.smooth": "Гладкие цвета", "quality.pixel": "Пиксельный стиль", "quality.lineart": "Лайнарт / Лого", "quality.bw": "Градации серого + контур",
   "remove.none": "Не удалять", "remove.dark": "Черный/темный фон", "remove.edgeDark": "Только внешний темный", "remove.checker": "Бело-серая сетка", "remove.white": "Белый фон",
   "layer.singleSail.art": "Один парус", "layer.double.top": "Верхний парус", "layer.double.bottom": "Нижний парус", "layer.triple.top": "Верхний парус", "layer.triple.middle": "Средний парус", "layer.triple.bottom": "Нижний парус",
   "layer.painting.art": "Изображение картины", "layer.wallCanvas.art": "Настенный холст", "layer.wall.art": "Мозаика стены", "layer.singleFlag.art": "Односторонний флаг", "layer.flag.art": "Многопанельный флаг",
@@ -1449,7 +1449,7 @@ function quantize(canvas) {
   const src = prepareImageData(qctx.getImageData(0, 0, canvas.width, canvas.height));
   const palette = choosePalette(src);
   if (els.qualityMode.value === "bw") {
-    return quantizeBlackWhite(src, palette);
+    return quantizeGrayOutline(src);
   }
   if (["dither", "softDither", "sharpDither"].includes(els.qualityMode.value)) {
     const modeBase = els.qualityMode.value === "softDither" ? 0.45 : els.qualityMode.value === "sharpDither" ? 0.9 : 0.7;
@@ -1471,7 +1471,7 @@ function prepareImageData(src) {
   if (mode === "lineart") return adjustImageData(src, { contrast: 1.15 + strength * 0.55, saturation: 0.95 + strength * 0.25 });
   if (mode === "sharpDither") return adjustImageData(src, { contrast: 1.05 + strength * 0.35, saturation: 1.0 + strength * 0.2 });
   if (mode === "softDither") return smoothImageData(adjustImageData(src, { contrast: 0.9 + strength * 0.08, saturation: 0.9 + strength * 0.08 }), 1);
-  if (mode === "bw") return smoothGrayscaleImageData(adjustImageData(src, { contrast: 1.12 + strength * 0.42, saturation: 0 }));
+  if (mode === "bw") return outlineGrayscaleImageData(adjustImageData(src, { contrast: 1.08 + strength * 0.28, saturation: 0 }));
   if (mode === "pixel") return pixelateImageData(src, 128);
   return adjustImageData(src, { contrast: 0.95 + strength * 0.12, saturation: 0.95 + strength * 0.12 });
 }
@@ -1492,6 +1492,36 @@ function grayscaleImageData(src) {
 function smoothGrayscaleImageData(src) {
   const gray = grayscaleImageData(src);
   return smoothImageData(gray, 1);
+}
+
+function outlineGrayscaleImageData(src) {
+  const strength = qualityStrength();
+  const gray = smoothGrayscaleImageData(src);
+  const out = new ImageData(new Uint8ClampedArray(gray.data), gray.width, gray.height);
+  const input = gray.data;
+  const output = out.data;
+  const w = gray.width;
+  const h = gray.height;
+  const edgeThreshold = 18 - strength * 8;
+  const edgeDarken = 0.35 - strength * 0.18;
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = (y * w + x) * 4;
+      if (input[i + 3] < 32) continue;
+      const left = input[(y * w + x - 1) * 4];
+      const right = input[(y * w + x + 1) * 4];
+      const up = input[((y - 1) * w + x) * 4];
+      const down = input[((y + 1) * w + x) * 4];
+      const edge = Math.abs(right - left) + Math.abs(down - up);
+      if (edge > edgeThreshold) {
+        const value = Math.max(0, input[i] * edgeDarken);
+        output[i] = value;
+        output[i + 1] = value;
+        output[i + 2] = value;
+      }
+    }
+  }
+  return out;
 }
 
 function smoothImageData(src, passes = 1) {
@@ -1612,18 +1642,16 @@ function otsuThreshold(src) {
   return Math.max(80, Math.min(180, threshold));
 }
 
-function quantizeBlackWhite(src, palette) {
-  const black = palette.find((color) => color.label === "Black") || palette[1] || palette[0];
-  const white = palette.find((color) => color.label === "White") || palette[2] || black;
-  const threshold = otsuThreshold(src);
-  const strength = qualityStrength();
-  const detailAmount = 6 + strength * 38;
-  const matrix = [
-    [0, 8, 2, 10],
-    [12, 4, 14, 6],
-    [3, 11, 1, 9],
-    [15, 7, 13, 5],
-  ];
+function grayscaleDyePalette() {
+  const labels = ["Black", "Slate", "Mineral Gray", "Silver", "White"];
+  const colors = labels
+    .map((label) => window.ATLAS_PALETTE.find((color) => color.label === label))
+    .filter(Boolean);
+  return colors.length >= 2 ? colors : activePalette();
+}
+
+function quantizeGrayOutline(src) {
+  const palette = grayscaleDyePalette();
   const out = new ImageData(src.width, src.height);
   const buffer = new Uint8Array(src.width * src.height);
   const counts = new Map();
@@ -1631,21 +1659,19 @@ function quantizeBlackWhite(src, palette) {
   for (let y = 0, p = 0; y < src.height; y++) {
     for (let x = 0; x < src.width; x++, p++) {
       const i = p * 4;
-    if (data[i + 3] < 32) {
-      buffer[p] = 0;
-      out.data[i + 3] = 0;
-      counts.set(0, (counts.get(0) || 0) + 1);
-      continue;
-    }
-      const orderedOffset = (matrix[y % 4][x % 4] / 15 - 0.5) * detailAmount;
-      const localValue = data[i] + orderedOffset;
-      const color = localValue < threshold ? black : white;
-    buffer[p] = color.id;
-    out.data[i] = color.rgba[0];
-    out.data[i + 1] = color.rgba[1];
-    out.data[i + 2] = color.rgba[2];
-    out.data[i + 3] = color.rgba[3];
-    counts.set(color.id, (counts.get(color.id) || 0) + 1);
+      if (data[i + 3] < 32) {
+        buffer[p] = 0;
+        out.data[i + 3] = 0;
+        counts.set(0, (counts.get(0) || 0) + 1);
+        continue;
+      }
+      const color = nearestColor(data[i], data[i + 1], data[i + 2], palette);
+      buffer[p] = color.id;
+      out.data[i] = color.rgba[0];
+      out.data[i + 1] = color.rgba[1];
+      out.data[i + 2] = color.rgba[2];
+      out.data[i + 3] = color.rgba[3];
+      counts.set(color.id, (counts.get(color.id) || 0) + 1);
     }
   }
   return { imageData: out, buffer, counts };
