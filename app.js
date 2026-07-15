@@ -417,7 +417,7 @@ const I18N = {
 
 const LANGUAGE_ALIASES = {
   ja: {
-    appTitle: "ATLAS PNT オフライン作成ツール",
+    appTitle: "PNT Tool",
     appIntro: "画像をこのブラウザー内だけで ATLAS 用の PNT/PNG に変換します。アップロードは行いません。帆、絵画、旗、タトゥー、複数キャンバスの壁画に対応し、完成ファイルは <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code> に入れてください。",
     language: "言語",
     modeLabel: "種類",
@@ -451,7 +451,7 @@ const LANGUAGE_ALIASES = {
     "mode.tattoo": "キャラクタータトゥー",
   },
   ko: {
-    appTitle: "ATLAS PNT 오프라인 제작 도구",
+    appTitle: "PNT Tool",
     appIntro: "이미지를 이 브라우저 안에서만 ATLAS용 PNT/PNG로 변환합니다. 업로드하지 않으며 돛, 그림, 깃발, 문신, 여러 캔버스 벽화를 지원합니다. 완성 파일은 <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>에 넣으세요.",
     language: "언어",
     modeLabel: "유형",
@@ -485,7 +485,7 @@ const LANGUAGE_ALIASES = {
     "mode.tattoo": "캐릭터 문신",
   },
   th: {
-    appTitle: "เครื่องมือสร้าง ATLAS PNT แบบออฟไลน์",
+    appTitle: "PNT Tool",
     appIntro: "แปลงรูปภาพในเบราว์เซอร์เครื่องนี้เป็นไฟล์ PNT/PNG สำหรับ ATLAS โดยไม่อัปโหลด รองรับใบเรือ ภาพวาด ธง รอยสัก และผนังภาพหลายผืน จากนั้นนำไฟล์ไปไว้ที่ <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>",
     language: "ภาษา",
     modeLabel: "ประเภท",
@@ -519,7 +519,7 @@ const LANGUAGE_ALIASES = {
     "mode.tattoo": "รอยสักตัวละคร",
   },
   ru: {
-    appTitle: "Офлайн-инструмент ATLAS PNT",
+    appTitle: "PNT Tool",
     appIntro: "Преобразует изображения локально в браузере в файлы PNT/PNG для ATLAS, без загрузки в сеть. Поддерживает паруса, картины, флаги, татуировки и стены из нескольких полотен. Готовые файлы поместите в <code>Steam\\steamapps\\common\\ATLAS\\ShooterGame\\Saved\\MyPaintings</code>.",
     language: "Язык",
     modeLabel: "Тип",
