@@ -117,7 +117,7 @@ body[data-game="atlas"] {
 }
 
 .rightColumn {
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .leftPanel,
@@ -895,12 +895,13 @@ button:hover {
 .rightColumn {
   grid-area: right;
   display: grid;
+  gap: 12px;
   align-content: start;
 }
 
 .rightPanel {
   min-height: 0;
-  height: 100%;
+  height: auto;
   overflow-y: auto;
 }
 
@@ -912,6 +913,12 @@ button:hover {
   min-width: min(100%, 420px);
 }
 
+.rightColumn .exportPanel {
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+}
+
 .exportInline {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(220px, auto);
@@ -921,6 +928,10 @@ button:hover {
 
 .exportInline .actions {
   grid-template-columns: minmax(92px, 1fr) minmax(132px, 1.15fr);
+}
+
+.rightColumn .exportInline {
+  grid-template-columns: 1fr;
 }
 
 .previewHeader {
