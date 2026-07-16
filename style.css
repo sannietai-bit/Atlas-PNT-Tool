@@ -107,10 +107,17 @@ body[data-game="atlas"] {
 
 .leftPanel,
 .rightColumn {
-  overflow-y: auto;
   scrollbar-gutter: auto;
   height: calc(100vh - 150px);
   min-height: 520px;
+}
+
+.leftPanel {
+  overflow-y: auto;
+}
+
+.rightColumn {
+  overflow: hidden;
 }
 
 .leftPanel,
@@ -165,21 +172,21 @@ body[data-game="atlas"] {
 }
 
 .leftPanel::-webkit-scrollbar,
-.rightColumn::-webkit-scrollbar,
+.rightPanel::-webkit-scrollbar,
 .canvasWrap::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 .leftPanel::-webkit-scrollbar-track,
-.rightColumn::-webkit-scrollbar-track,
+.rightPanel::-webkit-scrollbar-track,
 .canvasWrap::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 999px;
 }
 
 .leftPanel::-webkit-scrollbar-thumb,
-.rightColumn::-webkit-scrollbar-thumb,
+.rightPanel::-webkit-scrollbar-thumb,
 .canvasWrap::-webkit-scrollbar-thumb {
   background: #8b6334;
   border-radius: 999px;
@@ -188,7 +195,7 @@ body[data-game="atlas"] {
 }
 
 .leftPanel::-webkit-scrollbar-thumb:hover,
-.rightColumn::-webkit-scrollbar-thumb:hover,
+.rightPanel::-webkit-scrollbar-thumb:hover,
 .canvasWrap::-webkit-scrollbar-thumb:hover {
   background: #6c4724;
 }
@@ -367,6 +374,8 @@ body[data-game="atlas"] {
   width: calc(100% + 40px);
   max-width: min(220px, calc(100vw - 64px));
   height: 1px;
+  min-height: 1px;
+  max-height: 1px;
   margin: 6px auto 0;
   background: var(--hairline);
 }
@@ -379,6 +388,8 @@ body[data-game="atlas"] {
   width: calc(100% + 40px);
   max-width: min(220px, calc(100vw - 64px));
   height: 1px;
+  min-height: 1px;
+  max-height: 1px;
   margin: 0 auto 6px;
   background: var(--hairline);
 }
@@ -864,11 +875,11 @@ button:hover {
   grid-area: preview;
   position: static;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   min-height: 0;
   height: calc(100vh - 150px);
   min-height: 520px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .leftPanel {
@@ -879,11 +890,16 @@ button:hover {
   grid-area: right;
   display: grid;
   align-content: start;
-  gap: 12px;
 }
 
-.rightPanel,
+.rightPanel {
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
 .exportPanel {
+  margin-top: 12px;
   min-height: 0;
 }
 
@@ -1060,6 +1076,11 @@ canvas {
   .previewPanel {
     position: static;
     min-height: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .rightPanel {
     height: auto;
     overflow: visible;
   }
