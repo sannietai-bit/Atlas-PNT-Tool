@@ -875,10 +875,10 @@ button:hover {
   grid-area: preview;
   position: static;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(340px, 1fr) auto;
   min-height: 0;
-  height: calc(100vh - 150px);
-  min-height: 520px;
+  height: auto;
+  min-height: calc(100vh - 150px);
   overflow: auto;
 }
 
@@ -1078,6 +1078,7 @@ canvas {
     min-height: auto;
     height: auto;
     overflow: visible;
+    grid-template-rows: auto auto minmax(260px, auto) auto;
   }
 
   .rightPanel {
