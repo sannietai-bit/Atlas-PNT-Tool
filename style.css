@@ -710,6 +710,37 @@ input[type="color"] {
   margin-top: 18px;
 }
 
+.sidePanelTitle {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.exportBox {
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 3px 8px 4px 7px;
+  background:
+    radial-gradient(14px 10px at 0 0, var(--scroll-edge), transparent 72%),
+    radial-gradient(14px 10px at 100% 100%, var(--scroll-edge), transparent 72%),
+    var(--panel2);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 239, 196, .16),
+    0 2px 0 rgba(42, 33, 25, .08);
+}
+
+.exportBox .field {
+  margin-top: 10px;
+}
+
+.exportBox .actions {
+  margin-top: 10px;
+}
+
+.exportBoxTitle {
+  margin-top: 0;
+}
+
 .quickActions {
   display: grid;
   grid-template-columns: 1fr 1fr;
