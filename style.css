@@ -908,7 +908,7 @@ button:hover {
 }
 
 .rightPanel {
-  min-height: 0;
+  min-height: 676px;
   height: auto;
   overflow-y: auto;
 }
@@ -1133,6 +1133,7 @@ canvas {
   }
 
   .rightPanel {
+    min-height: 0;
     height: auto;
     overflow: visible;
   }
