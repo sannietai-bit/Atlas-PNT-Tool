@@ -434,6 +434,19 @@ input[type="range"]::-moz-range-thumb {
   filter: drop-shadow(0 1px 2px rgba(46, 33, 20, .35));
 }
 
+body[data-game="ark"] input[type="range"]::-webkit-slider-thumb {
+  width: 38px;
+  height: 28px;
+  margin-top: -11px;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 96 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%237a4b22' d='M9 34c8-8 20-10 34-8 8-9 22-13 37-7 8 3 13 9 13 16 0 8-8 13-19 14-9 1-19-1-28-5l-8 5-7 13h-8l5-15c-6-1-12-3-17-7L3 42c1-3 3-6 6-8Z'/%3E%3Cpath fill='%237a4b22' d='M50 43h9l5 17h-8l-3-10-7 10h-8l8-15zM17 35 2 29l3 10z'/%3E%3Ccircle cx='74' cy='29' r='3' fill='%23f3dfac'/%3E%3Cpath fill='%23f3dfac' d='M69 38c7 1 14 0 20-4-2 5-8 8-17 8-5 0-9-1-12-3l9-1Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+body[data-game="ark"] input[type="range"]::-moz-range-thumb {
+  width: 36px;
+  height: 26px;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 96 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%237a4b22' d='M9 34c8-8 20-10 34-8 8-9 22-13 37-7 8 3 13 9 13 16 0 8-8 13-19 14-9 1-19-1-28-5l-8 5-7 13h-8l5-15c-6-1-12-3-17-7L3 42c1-3 3-6 6-8Z'/%3E%3Cpath fill='%237a4b22' d='M50 43h9l5 17h-8l-3-10-7 10h-8l8-15zM17 35 2 29l3 10z'/%3E%3Ccircle cx='74' cy='29' r='3' fill='%23f3dfac'/%3E%3Cpath fill='%23f3dfac' d='M69 38c7 1 14 0 20-4-2 5-8 8-17 8-5 0-9-1-12-3l9-1Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 input[type="color"] {
   width: 100%;
   height: 38px;
