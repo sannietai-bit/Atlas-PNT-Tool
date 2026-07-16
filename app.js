@@ -269,6 +269,8 @@ const I18N = {
     helpTitle: "小提醒",
     helpText: "白框是官方框，紅框是安全範圍。色盤使用 ATLAS Wiki 的 52 色染料；人物紋身建議先在遊戲內存一個空白 Tattoo PNT，再用同名檔覆蓋測試。",
     dyeListTitle: "染料清單",
+    openDyeList: "查看染料清單",
+    closeDyeList: "關閉",
     "group.sails": "船隻帆面類",
     "group.flags": "領地與主權旗幟類",
     "group.structures": "建築與基地畫布類",
@@ -383,6 +385,8 @@ const I18N = {
     helpTitle: "Tip",
     helpText: "White frames are official frames, and red frames are safe areas. The palette uses the 52 ATLAS Wiki dyes. For tattoos, save a blank Tattoo PNT in game first, then test by replacing it with the same filename.",
     dyeListTitle: "Dye List",
+    openDyeList: "View Dye List",
+    closeDyeList: "Close",
     "group.sails": "Ship Sail Types",
     "group.flags": "Territory and Flag Types",
     "group.structures": "Building and Base Canvas Types",
@@ -478,6 +482,8 @@ const LANGUAGE_ALIASES = {
     downloadPnt: "PNT ダウンロード",
     helpTitle: "ヒント",
     dyeListTitle: "染料リスト",
+    openDyeList: "染料リストを見る",
+    closeDyeList: "閉じる",
     scale: "サイズ",
     moveX: "左右",
     moveY: "上下",
@@ -518,6 +524,8 @@ const LANGUAGE_ALIASES = {
     downloadPnt: "PNT 다운로드",
     helpTitle: "팁",
     dyeListTitle: "염료 목록",
+    openDyeList: "염료 목록 보기",
+    closeDyeList: "닫기",
     scale: "크기",
     moveX: "좌우",
     moveY: "상하",
@@ -558,6 +566,8 @@ const LANGUAGE_ALIASES = {
     downloadPnt: "ดาวน์โหลด PNT",
     helpTitle: "คำแนะนำ",
     dyeListTitle: "รายการสีย้อม",
+    openDyeList: "ดูรายการสีย้อม",
+    closeDyeList: "ปิด",
     scale: "ขนาด",
     moveX: "ซ้าย/ขวา",
     moveY: "ขึ้น/ลง",
@@ -598,6 +608,8 @@ const LANGUAGE_ALIASES = {
     downloadPnt: "Скачать PNT",
     helpTitle: "Подсказка",
     dyeListTitle: "Список красителей",
+    openDyeList: "Показать красители",
+    closeDyeList: "Закрыть",
     scale: "Размер",
     moveX: "Влево/вправо",
     moveY: "Вверх/вниз",
@@ -779,6 +791,8 @@ Object.assign(LANGUAGE_ALIASES.ja, {
   downloadPnt: "PNT ダウンロード",
   helpTitle: "ヒント",
   dyeListTitle: "染料リスト",
+  openDyeList: "染料リストを見る",
+  closeDyeList: "閉じる",
   tattooGuide: "タトゥー配置ガイド - ゲーム内でテストしてください",
 });
 
@@ -827,6 +841,8 @@ Object.assign(LANGUAGE_ALIASES.ko, {
   downloadPnt: "PNT 다운로드",
   helpTitle: "팁",
   dyeListTitle: "염료 목록",
+  openDyeList: "염료 목록 보기",
+  closeDyeList: "닫기",
   tattooGuide: "문신 배치 안내 - 게임 안에서 테스트하세요",
 });
 
@@ -875,6 +891,8 @@ Object.assign(LANGUAGE_ALIASES.th, {
   downloadPnt: "ดาวน์โหลด PNT",
   helpTitle: "คำแนะนำ",
   dyeListTitle: "รายการสีย้อม",
+  openDyeList: "ดูรายการสีย้อม",
+  closeDyeList: "ปิด",
   tattooGuide: "คู่มือตำแหน่งรอยสัก - โปรดทดสอบในเกม",
 });
 
@@ -923,6 +941,8 @@ Object.assign(LANGUAGE_ALIASES.ru, {
   downloadPnt: "Скачать PNT",
   helpTitle: "Подсказка",
   dyeListTitle: "Список красителей",
+  openDyeList: "Показать красители",
+  closeDyeList: "Закрыть",
   tattooGuide: "Схема размещения татуировки - проверьте в игре",
 });
 
@@ -973,6 +993,8 @@ Object.assign(LANGUAGE_ALIASES.vi, {
   helpTitle: "Gợi ý",
   helpText: "Khung trắng là khung chính thức, khung đỏ là vùng an toàn. Bảng màu dùng các màu nhuộm ATLAS. Với hình xăm, hãy lưu một Tattoo PNT trống trong trò chơi trước rồi thử thay bằng cùng tên tệp.",
   dyeListTitle: "Danh sách thuốc nhuộm",
+  openDyeList: "Xem danh sách thuốc nhuộm",
+  closeDyeList: "Đóng",
   "group.sails": "Loại buồm tàu",
   "group.flags": "Loại lãnh thổ và cờ",
   "group.structures": "Loại tranh và công trình",
@@ -1173,6 +1195,9 @@ const els = {
   helpTitle: document.getElementById("helpTitle"),
   helpText: document.getElementById("helpText"),
   dyeListTitle: document.getElementById("dyeListTitle"),
+  openDyeListBtn: document.getElementById("openDyeListBtn"),
+  closeDyeListBtn: document.getElementById("closeDyeListBtn"),
+  dyeModal: document.getElementById("dyeModal"),
   canvasWrap: document.getElementById("canvasWrap"),
   canvas: document.getElementById("previewCanvas"),
   dyeCount: document.getElementById("dyeCount"),
@@ -1340,6 +1365,9 @@ function applyLanguage() {
   setText(els.helpTitle, "helpTitle");
   setText(els.helpText, "helpText");
   setText(els.dyeListTitle, "dyeListTitle");
+  setText(els.openDyeListBtn, "openDyeList");
+  els.closeDyeListBtn.setAttribute("aria-label", t("closeDyeList", "Close"));
+  els.closeDyeListBtn.setAttribute("title", t("closeDyeList", "Close"));
   rebuildModeSelect(true);
   updateGameTabs();
   localizeSelect(els.fitMode, "fit");
@@ -2250,6 +2278,16 @@ function updateDyes(counts) {
   });
 }
 
+function openDyeModal() {
+  els.dyeModal.hidden = false;
+  els.closeDyeListBtn.focus();
+}
+
+function closeDyeModal() {
+  els.dyeModal.hidden = true;
+  els.openDyeListBtn.focus();
+}
+
 function download(name, blob) {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
@@ -2330,6 +2368,14 @@ window.addEventListener("resize", updatePreviewZoom);
 document.addEventListener("paste", pasteImageFromClipboard);
 els.pngBtn.addEventListener("click", downloadPng);
 els.pntBtn.addEventListener("click", downloadPnt);
+els.openDyeListBtn.addEventListener("click", openDyeModal);
+els.closeDyeListBtn.addEventListener("click", closeDyeModal);
+els.dyeModal.addEventListener("click", (event) => {
+  if (event.target === els.dyeModal) closeDyeModal();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !els.dyeModal.hidden) closeDyeModal();
+});
 els.canvasWrap.addEventListener("dblclick", (event) => {
   event.preventDefault();
   event.stopPropagation();

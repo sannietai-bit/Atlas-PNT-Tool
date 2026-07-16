@@ -230,10 +230,20 @@
         <p id="helpText">白框是官方框，紅框是安全範圍。色盤使用 ATLAS Wiki 的 52 色染料；人物紋身建議先在遊戲內存一個空白 Tattoo PNT，再用同名檔覆蓋測試。</p>
       </section>
 
-      <h2 id="dyeListTitle" class="sectionTitle">染料清單</h2>
-      <div id="dyeList" class="dyeList"></div>
+      <section class="dyeSummaryBox">
+        <button id="openDyeListBtn" type="button" class="secondaryButton">查看染料清單</button>
+      </section>
 
     </section>
+    <div id="dyeModal" class="modalOverlay" hidden>
+      <section class="modalPanel" role="dialog" aria-modal="true" aria-labelledby="dyeListTitle">
+        <div class="modalHeader">
+          <h2 id="dyeListTitle" class="sectionTitle">染料清單</h2>
+          <button id="closeDyeListBtn" type="button" class="iconButton" aria-label="關閉">×</button>
+        </div>
+        <div id="dyeList" class="dyeList modalDyeList"></div>
+      </section>
+    </div>
     <section id="guidePanel" class="panel guidePanel">
       <h2 id="guideTitle">操作說明</h2>
       <div class="guideSteps">
