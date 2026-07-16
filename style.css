@@ -268,6 +268,16 @@ body[data-game="atlas"] {
   height: 100%;
 }
 
+.gameTab[data-guide] > span[aria-hidden="true"],
+.gameTabLink > span[aria-hidden="true"] {
+  display: inline-grid;
+  width: 28px;
+  height: 24px;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
 .gameTab::after {
   content: "";
   position: absolute;
