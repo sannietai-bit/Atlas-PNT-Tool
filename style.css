@@ -109,8 +109,7 @@ body[data-game="atlas"] {
   opacity: .8;
 }
 
-.leftPanel,
-.rightColumn {
+.leftPanel {
   scrollbar-gutter: auto;
   height: calc(100vh - 150px);
   min-height: 520px;
@@ -121,7 +120,10 @@ body[data-game="atlas"] {
 }
 
 .rightColumn {
-  overflow-y: auto;
+  scrollbar-gutter: auto;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
 }
 
 .leftPanel,
@@ -916,7 +918,7 @@ button:hover {
 .rightPanel {
   min-height: 0;
   height: auto;
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .exportPanel {
