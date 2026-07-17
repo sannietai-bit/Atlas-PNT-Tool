@@ -548,6 +548,13 @@ code {
   font-size: 14px;
 }
 
+.labelWithBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
 select, input[type="text"], input[type="file"], input[type="number"] {
   width: 100%;
   min-width: 0;
@@ -1037,14 +1044,21 @@ button:hover {
 }
 
 .previewHeader {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(260px, 440px) minmax(120px, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.previewHeader > div:first-child {
-  text-align: center;
+.previewTitleBlock {
+  justify-self: start;
+  text-align: left;
+}
+
+.previewHeader .modeCard {
+  justify-self: center;
+  width: min(100%, 440px);
 }
 
 .previewMetaRow {
@@ -1062,6 +1076,7 @@ button:hover {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
+  justify-self: end;
 }
 
 .zoomField {
@@ -1099,6 +1114,21 @@ button:hover {
   border-radius: 50%;
   background: var(--rust);
   transform: translateY(-50%);
+}
+
+.dyeCountBubble {
+  min-width: 0;
+  padding: 2px 8px 2px 16px;
+  border-color: rgba(166, 76, 45, .56);
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.dyeCountBubble::before {
+  left: 7px;
+  width: 4px;
+  height: 4px;
 }
 
 .canvasWrap {
@@ -1277,6 +1307,7 @@ canvas {
   }
 
   .previewHeader {
+    grid-template-columns: 1fr;
     align-items: stretch;
     gap: 10px;
   }
@@ -1287,6 +1318,7 @@ canvas {
 
   .previewTools {
     justify-content: space-between;
+    justify-self: stretch;
   }
 
   .zoomField {
@@ -1300,6 +1332,10 @@ canvas {
 
   .badge {
     min-width: 58px;
+  }
+
+  .dyeCountBubble {
+    min-width: 0;
   }
 
   .canvasWrap {

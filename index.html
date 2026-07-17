@@ -106,12 +106,10 @@
 
     <section class="panel previewPanel">
       <div class="previewHeader">
-        <div>
+        <div class="previewTitleBlock">
           <h2 id="previewTitle">預覽</h2>
           <p id="fileNameHint" class="srOnly"></p>
         </div>
-      </div>
-      <div class="previewMetaRow">
         <div id="modeCard" class="modeCard" aria-live="polite">
           <div id="modeIcon" class="modeIcon"></div>
           <div>
@@ -135,7 +133,6 @@
               <option value="10">10%</option>
             </select>
           </label>
-          <div id="dyeCount" class="badge">0 色</div>
         </div>
       </div>
       <div id="canvasWrap" class="canvasWrap">
@@ -155,7 +152,10 @@
           </select>
         </label>
         <label class="field">
-          <span id="paletteLimitLabel">染料</span>
+          <span class="labelWithBadge">
+            <span id="paletteLimitLabel">染料</span>
+            <span id="dyeCount" class="badge dyeCountBubble">0 色</span>
+          </span>
           <select id="paletteLimit">
             <option value="all">全部</option>
             <option value="5">最多 5 色</option>
