@@ -1045,18 +1045,23 @@ button:hover {
 
 .previewHeader {
   display: grid;
+  grid-template-areas:
+    ". title tools"
+    ". card tools";
   grid-template-columns: minmax(120px, 1fr) minmax(260px, 440px) minmax(120px, 1fr);
   align-items: center;
-  gap: 12px;
+  gap: 8px 12px;
   margin-bottom: 12px;
 }
 
 .previewTitleBlock {
-  justify-self: start;
-  text-align: left;
+  grid-area: title;
+  justify-self: center;
+  text-align: center;
 }
 
 .previewHeader .modeCard {
+  grid-area: card;
   justify-self: center;
   width: min(100%, 440px);
 }
@@ -1071,6 +1076,7 @@ button:hover {
 }
 
 .previewTools {
+  grid-area: tools;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1117,18 +1123,16 @@ button:hover {
 }
 
 .dyeCountBubble {
-  min-width: 0;
-  padding: 2px 8px 2px 16px;
+  min-width: 20px;
+  padding: 1px 6px;
   border-color: rgba(166, 76, 45, .56);
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 10px;
+  line-height: 1.25;
   white-space: nowrap;
 }
 
 .dyeCountBubble::before {
-  left: 7px;
-  width: 4px;
-  height: 4px;
+  display: none;
 }
 
 .canvasWrap {
@@ -1307,6 +1311,10 @@ canvas {
   }
 
   .previewHeader {
+    grid-template-areas:
+      "title"
+      "card"
+      "tools";
     grid-template-columns: 1fr;
     align-items: stretch;
     gap: 10px;

@@ -2255,7 +2255,7 @@ function cleanOutputNameInput() {
 
 function updateDyes(counts) {
   const nonTransparent = [...counts.entries()].filter(([id, count]) => id !== 0 && count > 0);
-  els.dyeCount.textContent = formatText("colorCount", { count: nonTransparent.length });
+  els.dyeCount.textContent = String(nonTransparent.length);
   els.dyeList.innerHTML = "";
   nonTransparent.sort((a, b) => b[1] - a[1]).forEach(([id, count]) => {
     const color = window.ATLAS_PALETTE.find((c) => c.id === id);
